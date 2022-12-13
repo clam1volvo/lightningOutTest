@@ -1,0 +1,36 @@
+<html>
+
+<style>
+
+</style>
+
+<script src="https://cspdev-rcx-volvocars.cs160.force.com/csp/lightning/lightning.out.js"></script>
+
+<div data-lightning-out="true"></div>
+
+  <script>
+
+    const appName = 'c:lightningOutWrapper';
+    const componentName = 'c:lightningOutTest';
+    const lightningEndpoint = 'https://cspdev-rcx-volvocars.cs160.force.com';
+    //const targetElement = document.querySelector("[data-lightning-out]");
+    const componentAttributes = {
+
+    };
+
+    $Lightning.use(
+            appName,
+            function (){
+              $Lightning.createComponent(
+                      componentName,
+                      componentAttributes,
+                      targetElement,
+                      function (cmp){
+                        console.log('lightning component created');
+                      }
+              );
+            },
+            lightningEndpoint
+    );
+  </script>
+</html>
