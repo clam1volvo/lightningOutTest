@@ -27,9 +27,10 @@
     buttonSubmit.addEventListener('click', () => {
       authToken = input.value
       tokenDiv.innerText = input.value
+      actionBaby()
     })
-
-    $Lightning.use(
+    
+    const actionBaby = () => $Lightning.use(
             appName,
             function (){
               $Lightning.createComponent(
