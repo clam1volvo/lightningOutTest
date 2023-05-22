@@ -7,16 +7,27 @@
 <script src="https://volvocars--cspdev.sandbox.my.site.com/lightning/lightning.out.js"></script>
 
 <div data-lightning-out="true"></div>
+<input></input>
+<button>Submit</button>
+<div [data-token]></div>
 
   <script>
-
     const appName = 'c:lightningOutTest';
     const componentName = 'c:dummyWebComponent';
     const lightningEndpoint = 'https://volvocars--cspdev.sandbox.my.site.com/csp';
     const targetElement = document.querySelector("[data-lightning-out]");
+    const input = document.querySelector('input')
+    const buttonSubmit = document.querySelector('button')
+    const tokenDiv = document.querySelector('[data-token]')
+    let authToken = '';
     const componentAttributes = {
 
     };
+    
+    buttonSubmit.addEventListener('click', () => {
+      authToken = input.value
+      tokenDiv.innerText = input.value
+    })
 
     $Lightning.use(
             appName,
@@ -30,7 +41,8 @@
                       }
               );
             },
-            lightningEndpoint
+            lightningEndpoint, authToken
     );
+    
   </script>
 </html>
