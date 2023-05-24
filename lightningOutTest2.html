@@ -13,7 +13,7 @@
 
   <script>
     const appName = 'c:lightningOutTest';
-    const componentName = 'c:dummyWebComponent';
+    const componentName = 'c:rpAnnouncements';
     const lightningEndpoint = 'https://volvocars--cspdev.sandbox.lightning.force.com';
     const targetElement = document.querySelector("[data-lightning-out]");
     const input = document.querySelector('input')
@@ -25,6 +25,12 @@
     };
     
     buttonSubmit.addEventListener('click', () => {
+      authToken = input.value
+      tokenDiv.innerText = input.value
+      actionBaby()
+    })
+    
+    buttonSubmit.addEventListener('enter', () => {
       authToken = input.value
       tokenDiv.innerText = input.value
       actionBaby()
